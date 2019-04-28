@@ -30,14 +30,18 @@ publishing {
             artifact javadocJar
         }
     }
-    repositories{
-        maven{
-            name="myRepo"
-            url="D://java/maven-repo"
+    repositories {
+        maven {
+            name = "myRepo"
+            url = "D://java/maven-repo"
         }
     }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'org.springframework.boot:spring-boot-starter:2.1.3.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-json:2.1.3.RELEASE'
+    compileOnly('org.projectlombok:lombok:1.18.6')
+    annotationProcessor('org.projectlombok:lombok:1.18.6')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.1.3.RELEASE'
 }
